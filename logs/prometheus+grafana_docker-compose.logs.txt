@@ -1,0 +1,55 @@
+Creating network "prometheus_default" with the default driver
+Creating prometheus_grafana_1    ... done
+Creating prometheus_prometheus_1 ... done
+Attaching to prometheus_grafana_1, prometheus_prometheus_1
+grafana_1     | Error checking server process execution privilege. error: could not get current OS user to detect process privileges
+grafana_1     | logger=settings t=2022-06-09T16:35:09.86+0000 lvl=info msg="Starting Grafana" version=8.5.5 commit=d32ae18909 branch=HEAD compiled=2022-06-06T18:50:28Z
+grafana_1     | logger=settings t=2022-06-09T16:35:09.86+0000 lvl=info msg="The state of unified alerting is still not defined. The decision will be made during as we run the database migrations"
+grafana_1     | logger=settings t=2022-06-09T16:35:09.86+0000 lvl=info msg="Config loaded from" file=/usr/share/grafana/conf/defaults.ini
+grafana_1     | logger=settings t=2022-06-09T16:35:09.86+0000 lvl=info msg="Config loaded from" file=/etc/grafana/grafana.ini
+grafana_1     | logger=settings t=2022-06-09T16:35:09.86+0000 lvl=info msg="Config overridden from command line" arg="default.paths.data=/var/lib/grafana"
+grafana_1     | logger=settings t=2022-06-09T16:35:09.86+0000 lvl=info msg="Config overridden from command line" arg="default.paths.logs=/var/log/grafana"
+grafana_1     | logger=settings t=2022-06-09T16:35:09.86+0000 lvl=info msg="Config overridden from command line" arg="default.paths.plugins=/var/lib/grafana/plugins"
+grafana_1     | logger=settings t=2022-06-09T16:35:09.86+0000 lvl=info msg="Config overridden from command line" arg="default.paths.provisioning=/etc/grafana/provisioning"
+grafana_1     | logger=settings t=2022-06-09T16:35:09.86+0000 lvl=info msg="Config overridden from command line" arg="default.log.mode=console"
+grafana_1     | logger=settings t=2022-06-09T16:35:09.86+0000 lvl=info msg="Config overridden from Environment variable" var="GF_PATHS_DATA=/var/lib/grafana"
+grafana_1     | logger=settings t=2022-06-09T16:35:09.87+0000 lvl=info msg="Config overridden from Environment variable" var="GF_PATHS_LOGS=/var/log/grafana"
+grafana_1     | logger=settings t=2022-06-09T16:35:09.87+0000 lvl=info msg="Config overridden from Environment variable" var="GF_PATHS_PLUGINS=/var/lib/grafana/plugins"
+grafana_1     | logger=settings t=2022-06-09T16:35:09.87+0000 lvl=info msg="Config overridden from Environment variable" var="GF_PATHS_PROVISIONING=/etc/grafana/provisioning"
+grafana_1     | logger=settings t=2022-06-09T16:35:09.87+0000 lvl=info msg="Path Home" path=/usr/share/grafana
+grafana_1     | logger=settings t=2022-06-09T16:35:09.87+0000 lvl=info msg="Path Data" path=/var/lib/grafana
+grafana_1     | logger=settings t=2022-06-09T16:35:09.87+0000 lvl=info msg="Path Logs" path=/var/log/grafana
+grafana_1     | logger=settings t=2022-06-09T16:35:09.87+0000 lvl=info msg="Path Plugins" path=/var/lib/grafana/plugins
+grafana_1     | logger=settings t=2022-06-09T16:35:09.87+0000 lvl=info msg="Path Provisioning" path=/etc/grafana/provisioning
+grafana_1     | logger=settings t=2022-06-09T16:35:09.87+0000 lvl=info msg="App mode production"
+grafana_1     | logger=sqlstore t=2022-06-09T16:35:09.87+0000 lvl=info msg="Connecting to DB" dbtype=sqlite3
+prometheus_1  | ts=2022-06-09T16:35:09.899Z caller=main.go:491 level=info msg="No time or size retention was set so using the default time retention" duration=15d
+prometheus_1  | ts=2022-06-09T16:35:09.901Z caller=main.go:535 level=info msg="Starting Prometheus Server" mode=server version="(version=2.36.1, branch=HEAD, revision=3c0a100dec2950f23e91f7efbf8867750960807d)"
+prometheus_1  | ts=2022-06-09T16:35:09.903Z caller=main.go:540 level=info build_context="(go=go1.18.3, user=root@e59c79158868, date=20220609-15:25:21)"
+prometheus_1  | ts=2022-06-09T16:35:09.904Z caller=main.go:541 level=info host_details="(Linux 5.4.0-51-generic #56-Ubuntu SMP Mon Oct 5 14:28:49 UTC 2020 x86_64 1ef213681af6 (none))"
+prometheus_1  | ts=2022-06-09T16:35:09.906Z caller=main.go:542 level=info fd_limits="(soft=1048576, hard=1048576)"
+prometheus_1  | ts=2022-06-09T16:35:09.907Z caller=main.go:543 level=info vm_limits="(soft=unlimited, hard=unlimited)"
+prometheus_1  | ts=2022-06-09T16:35:09.915Z caller=web.go:553 level=info component=web msg="Start listening for connections" address=0.0.0.0:9090
+prometheus_1  | ts=2022-06-09T16:35:09.921Z caller=main.go:972 level=info msg="Starting TSDB ..."
+prometheus_1  | ts=2022-06-09T16:35:09.928Z caller=head.go:493 level=info component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+prometheus_1  | ts=2022-06-09T16:35:09.932Z caller=head.go:536 level=info component=tsdb msg="On-disk memory mappable chunks replay completed" duration=15.368µs
+prometheus_1  | ts=2022-06-09T16:35:09.933Z caller=head.go:542 level=info component=tsdb msg="Replaying WAL, this may take a while"
+prometheus_1  | ts=2022-06-09T16:35:09.935Z caller=tls_config.go:195 level=info component=web msg="TLS is disabled." http2=false
+grafana_1     | logger=migrator t=2022-06-09T16:35:09.94+0000 lvl=info msg="Starting DB migrations"
+grafana_1     | logger=migrator t=2022-06-09T16:35:09.95+0000 lvl=info msg="migrations completed" performed=0 skipped=392 duration=1.716127ms
+grafana_1     | logger=plugin.manager t=2022-06-09T16:35:10.02+0000 lvl=info msg="Plugin registered" pluginId=input
+grafana_1     | logger=query_data t=2022-06-09T16:35:10.03+0000 lvl=info msg="Query Service initialization"
+grafana_1     | logger=live.push_http t=2022-06-09T16:35:10.04+0000 lvl=info msg="Live Push Gateway initialization"
+grafana_1     | logger=http.server t=2022-06-09T16:35:10.2+0000 lvl=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl= socket=
+grafana_1     | logger=ngalert t=2022-06-09T16:35:10.2+0000 lvl=info msg="warming cache for startup"
+grafana_1     | logger=ngalert.multiorg.alertmanager t=2022-06-09T16:35:10.2+0000 lvl=info msg="starting MultiOrg Alertmanager"
+grafana_1     | logger=grafanaStorageLogger t=2022-06-09T16:35:10.23+0000 lvl=info msg="storage starting"
+prometheus_1  | ts=2022-06-09T16:35:10.287Z caller=head.go:613 level=info component=tsdb msg="WAL segment loaded" segment=0 maxSegment=1
+prometheus_1  | ts=2022-06-09T16:35:10.289Z caller=head.go:613 level=info component=tsdb msg="WAL segment loaded" segment=1 maxSegment=1
+prometheus_1  | ts=2022-06-09T16:35:10.290Z caller=head.go:619 level=info component=tsdb msg="WAL replay completed" checkpoint_replay_duration=104.177µs wal_replay_duration=355.445021ms total_replay_duration=357.12081ms
+prometheus_1  | ts=2022-06-09T16:35:10.293Z caller=main.go:993 level=info fs_type=EXT4_SUPER_MAGIC
+prometheus_1  | ts=2022-06-09T16:35:10.293Z caller=main.go:996 level=info msg="TSDB started"
+prometheus_1  | ts=2022-06-09T16:35:10.294Z caller=main.go:1177 level=info msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+prometheus_1  | ts=2022-06-09T16:35:10.296Z caller=main.go:1214 level=info msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=1.455986ms db_storage=2.334µs remote_storage=2.97µs web_handler=817ns query_engine=1.742µs scrape=309.103µs scrape_sd=69.318µs notify=1.687µs notify_sd=2.34µs rules=2.49µs tracing=10.325µs
+prometheus_1  | ts=2022-06-09T16:35:10.297Z caller=main.go:957 level=info msg="Server is ready to receive web requests."
+prometheus_1  | ts=2022-06-09T16:35:10.297Z caller=manager.go:937 level=info component="rule manager" msg="Starting rule manager..."

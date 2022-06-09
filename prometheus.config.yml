@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  - job_name: 'wordpress'
+    static_configs:
+      - targets: ['159.223.234.78:8080']  # cadvisor
+      - targets: ['159.223.234.78:9104']  # mysqld_exporter
+      - targets: ['159.223.234.78:9100']  # node_exporter
+
+

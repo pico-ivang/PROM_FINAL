@@ -1,0 +1,66 @@
+docker-compose запускает mysql + wordpress, а так же  cadvisor + mysqld_exporter
+
+вот выхлоп docker-compose logs 
+Creating network "wordpress_default" with the default driver
+Creating wordpress_db_1              ... done
+Creating wordpress_cadvisor_1        ... done
+Creating wordpress_mysqld_exporter_1 ... done
+Creating wordpress_wordpress_1       ... done
+Attaching to wordpress_db_1, wordpress_cadvisor_1, wordpress_mysqld_exporter_1, wordpress_wordpress_1
+cadvisor_1         | W0609 16:55:40.223770       1 machine_libipmctl.go:62] There are no NVM devices!
+db_1               | 2022-06-09 16:55:38+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.38-1debian10 started.
+db_1               | 2022-06-09 16:55:39+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+db_1               | 2022-06-09 16:55:39+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.38-1debian10 started.
+db_1               | 2022-06-09T16:55:39.950675Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+db_1               | 2022-06-09T16:55:39.966883Z 0 [Note] mysqld (mysqld 5.7.38) starting as process 1 ...
+db_1               | 2022-06-09T16:55:39.980784Z 0 [Note] InnoDB: PUNCH HOLE support available
+db_1               | 2022-06-09T16:55:39.980816Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+db_1               | 2022-06-09T16:55:39.980820Z 0 [Note] InnoDB: Uses event mutexes
+db_1               | 2022-06-09T16:55:39.980824Z 0 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+db_1               | 2022-06-09T16:55:39.980827Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+db_1               | 2022-06-09T16:55:39.980831Z 0 [Note] InnoDB: Using Linux native AIO
+db_1               | 2022-06-09T16:55:39.981094Z 0 [Note] InnoDB: Number of pools: 1
+db_1               | 2022-06-09T16:55:39.981227Z 0 [Note] InnoDB: Using CPU crc32 instructions
+db_1               | 2022-06-09T16:55:40.009290Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+db_1               | 2022-06-09T16:55:40.048330Z 0 [Note] InnoDB: Completed initialization of buffer pool
+db_1               | 2022-06-09T16:55:40.056758Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+db_1               | 2022-06-09T16:55:40.068783Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+db_1               | 2022-06-09T16:55:40.087556Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+db_1               | 2022-06-09T16:55:40.087671Z 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+db_1               | 2022-06-09T16:55:40.132457Z 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+db_1               | 2022-06-09T16:55:40.133562Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+db_1               | 2022-06-09T16:55:40.133587Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+db_1               | 2022-06-09T16:55:40.134091Z 0 [Note] InnoDB: Waiting for purge to start
+db_1               | 2022-06-09T16:55:40.184281Z 0 [Note] InnoDB: 5.7.38 started; log sequence number 12659969
+db_1               | 2022-06-09T16:55:40.184720Z 0 [Note] Plugin 'FEDERATED' is disabled.
+db_1               | 2022-06-09T16:55:40.193901Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+db_1               | 2022-06-09T16:55:40.195603Z 0 [Note] InnoDB: Buffer pool(s) load completed at 220609 16:55:40
+db_1               | 2022-06-09T16:55:40.202644Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+db_1               | 2022-06-09T16:55:40.202673Z 0 [Note] Skipping generation of SSL certificates as certificate files are present in data directory.
+db_1               | 2022-06-09T16:55:40.202678Z 0 [Warning] A deprecated TLS version TLSv1 is enabled. Please use TLSv1.2 or higher.
+db_1               | 2022-06-09T16:55:40.202680Z 0 [Warning] A deprecated TLS version TLSv1.1 is enabled. Please use TLSv1.2 or higher.
+db_1               | 2022-06-09T16:55:40.203303Z 0 [Warning] CA certificate ca.pem is self signed.
+db_1               | 2022-06-09T16:55:40.203334Z 0 [Note] Skipping generation of RSA key pair as key files are present in data directory.
+db_1               | 2022-06-09T16:55:40.203861Z 0 [Note] Server hostname (bind-address): '*'; port: 3306
+db_1               | 2022-06-09T16:55:40.204810Z 0 [Note] IPv6 is available.
+db_1               | 2022-06-09T16:55:40.204846Z 0 [Note]   - '::' resolves to '::';
+db_1               | 2022-06-09T16:55:40.204886Z 0 [Note] Server socket created on IP: '::'.
+db_1               | 2022-06-09T16:55:40.212719Z 0 [Warning] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+db_1               | 2022-06-09T16:55:40.248554Z 0 [Note] Event Scheduler: Loaded 0 events
+db_1               | 2022-06-09T16:55:40.248765Z 0 [Note] mysqld: ready for connections.
+db_1               | Version: '5.7.38'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
+mysqld_exporter_1  | ts=2022-06-09T16:55:40.028Z caller=mysqld_exporter.go:277 level=info msg="Starting mysqld_exporter" version="(version=0.14.0, branch=HEAD, revision=ca1b9af82a471c849c529eb8aadb1aac73e7b68c)"
+mysqld_exporter_1  | ts=2022-06-09T16:55:40.028Z caller=mysqld_exporter.go:278 level=info msg="Build context" (gogo1.17.8,userroot@401d370ca42e,date20220304-16:25:15)=(MISSING)
+mysqld_exporter_1  | ts=2022-06-09T16:55:40.028Z caller=mysqld_exporter.go:293 level=info msg="Scraper enabled" scraper=global_status
+mysqld_exporter_1  | ts=2022-06-09T16:55:40.028Z caller=mysqld_exporter.go:293 level=info msg="Scraper enabled" scraper=global_variables
+mysqld_exporter_1  | ts=2022-06-09T16:55:40.028Z caller=mysqld_exporter.go:293 level=info msg="Scraper enabled" scraper=slave_status
+mysqld_exporter_1  | ts=2022-06-09T16:55:40.028Z caller=mysqld_exporter.go:293 level=info msg="Scraper enabled" scraper=info_schema.innodb_cmp
+mysqld_exporter_1  | ts=2022-06-09T16:55:40.028Z caller=mysqld_exporter.go:293 level=info msg="Scraper enabled" scraper=info_schema.innodb_cmpmem
+mysqld_exporter_1  | ts=2022-06-09T16:55:40.028Z caller=mysqld_exporter.go:293 level=info msg="Scraper enabled" scraper=info_schema.query_response_time
+mysqld_exporter_1  | ts=2022-06-09T16:55:40.028Z caller=mysqld_exporter.go:303 level=info msg="Listening on address" address=:9104
+mysqld_exporter_1  | ts=2022-06-09T16:55:40.030Z caller=tls_config.go:195 level=info msg="TLS is disabled." http2=false
+wordpress_1        | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.5. Set the 'ServerName' directive globally to suppress this message
+wordpress_1        | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.20.0.5. Set the 'ServerName' directive globally to suppress this message
+wordpress_1        | [Thu Jun 09 16:55:40.840665 2022] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.53 (Debian) PHP/7.4.29 configured -- resuming normal operations
+wordpress_1        | [Thu Jun 09 16:55:40.853781 2022] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+

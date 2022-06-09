@@ -1,0 +1,19 @@
+services:
+  prometheus:
+    image: prom/prometheus
+    restart: unless-stopped
+    user: "1001:1001"
+    ports:
+      - "9090:9090"
+    volumes:
+      - /opt/prometheus/prom_config:/etc/prometheus
+      - /opt/prometheus/prom_data:/prometheus
+
+  grafana:
+    image: grafana/grafana-oss
+    restart: unless-stopped
+    user: "1002:1002"
+    ports:
+      - "3000:3000"
+    volumes:
+      - /opt/prometheus/gra_data:/var/lib/grafana
